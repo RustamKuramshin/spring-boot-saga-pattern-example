@@ -1,6 +1,7 @@
 package ru.kuramshindev.orderservicetemporal;
 
 import io.temporal.activity.ActivityOptions;
+import io.temporal.common.RetryOptions;
 import io.temporal.workflow.Saga;
 import io.temporal.workflow.Workflow;
 
@@ -11,6 +12,7 @@ public class OrderWorkflowImpl implements OrderWorkflow {
 
     private final ActivityOptions options =
             ActivityOptions.newBuilder()
+                    .setRetryOptions(RetryOptions.newBuilder().setMaximumAttempts(10).build())
                     .setStartToCloseTimeout(Duration.ofSeconds(10))
                     .build();
 
