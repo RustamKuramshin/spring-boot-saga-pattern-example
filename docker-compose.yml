@@ -1,0 +1,11 @@
+services:
+  wiremock:
+    image: wiremock/wiremock
+    container_name: wiremock
+    ports:
+      - "8085:8080"
+    restart: always
+    volumes:
+      - ./wiremock/__files:/home/wiremock/__files
+      - ./wiremock:/home/wiremock
+    entrypoint: [ "/docker-entrypoint.sh", "--print-all-network-traffic", "--disable-gzip", "--verbose" ]
