@@ -1,0 +1,17 @@
+###
+POST http://localhost:8085/api/v1/payments
+
+###
+POST http://localhost:8085/api/v1/payments/cancel
+
+###
+POST http://localhost:8085/api/v1/inventory/reserve
+
+###
+POST http://localhost:8085/api/v1/inventory/release
+
+###
+POST http://localhost:8085/api/v1/shipping/create
+
+###
+POST http://localhost:8085/api/v1/shipping/cancel
